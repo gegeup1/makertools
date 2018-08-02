@@ -2,24 +2,26 @@
 
 if(isset($_POST['execute'])) {
 
-	$files = glob('files/sgbquote/random/*');
-	$bg_array = array();
-	foreach($files as $file) {
-		$bg_array[] = $file;
-	}
+	echo "<label>Result :</label>";
 
 	$folder = "files/sgbquote/";
-	$bg = $bg_array[array_rand($bg_array)];
-	$overlay = $folder."source/overlay.png";
-	$font = $folder."source/Ubuntu-Medium.ttf";
-	$filename = $folder.rand(000,999).".png";
+	$overlay = $folder."overlay.png";
+	$font = $folder."Ubuntu-Medium.ttf";
+	$filename = $folder.md5(rand(000,999)).".png";
 	$quote = @$_POST['quote'] ? $_POST['quote'] : 'ISI DULU KONTOL';
 	$copyright = @$_POST['copyright'] ? $_POST['copyright'] : 'SGB TEAM';
-	$background = ($_POST['background'] == 'random' ? $bg : $_POST['background']);
+	$backgrond = @$_POST['background'];
+
+	if (!filter_var($backgrond, FILTER_VALIDATE_URL) === false) {
+		$bg = $backgrond;
+	}else {		
+		$bg = get_redirect_target('https://source.unsplash.com/640x640/?'.$backgrond);
+	}
 
 	$image = new PHPImage();
+	$image->setQuality(10);
 	$image->setDimensionsFromImage($overlay);
-	$image->draw($background);
+	$image->draw($bg);
 	$image->draw($overlay, '50%', '75%');
 	$image->setFont($font);
 	$image->setTextColor(array(255, 255, 255));
@@ -44,7 +46,8 @@ if(isset($_POST['execute'])) {
 		'debug' => false
 		));
 	$image->save($filename);
-	echo "<a href='".$filename."' target='_blank'><img src='".$filename."'/></a>";
+	echo "<a href='data:image/png;base64,".base64_encode(file_get_contents($filename))."' target='_blank' download='$filename'><img src='data:image/png;base64,".base64_encode(file_get_contents($filename))."'/></a>";
+	unlink($filename);
 }
 
 ?>

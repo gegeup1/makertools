@@ -10,9 +10,3 @@
 		SGB Quote
 	</a>
 </li> 
-<li class="waves-block waves-effect">
-	<a href="?module=sgbquotelist">
-		<i class="icon icon-lg icon-th-list"></i>
-		SGB Quote List 
-	</a>
-</li> 
