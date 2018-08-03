@@ -46,7 +46,10 @@ if(isset($_POST['execute'])) {
 		'debug' => false
 		));
 	$image->save($filename);
-	echo "<a href='data:image/png;base64,".base64_encode(file_get_contents($filename))."' target='_blank' download='$filename'><img src='data:image/png;base64,".base64_encode(file_get_contents($filename))."'/></a>";
+
+
+	$imagebase64 = base64_encode(file_get_contents($filename));
+	echo "<a href='data:image/png;base64,".$imagebase64."' target='_blank' download='$filename'><img src='data:image/png;base64,".$imagebase64."'/></a>";
 	unlink($filename);
 }
 
