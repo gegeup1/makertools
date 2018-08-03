@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal" id="modalguide" tabindex="-1" role="dialog">
+<div class="modal" id="modalauthor" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

@@ -37,20 +37,11 @@ include "config/settings.php";
 			<div class="brand-wrap" style="background-image:url(https://lh3.googleusercontent.com/-SatEkQZFds0/W0M0muGGxJI/AAAAAAAAAj4/Wy1DYvDmc6cs1v_asXcf61Qc-LrSGPMNgCLcBGAs/s1600/bg1.jpg)">
 				<div class="brand">
 					<a href='javascript:;' class="avatar waves-effect waves-circle waves-light">
-						<?php if (!empty($_SESSION['masuk'])): ?>
-							<img width="100" src="<?= $_SESSION['picture'] ?>"/>	
-						<?php else: ?>
-							<img src="https://2.bp.blogspot.com/-SxG8ABgNBwo/W0H9c9EMtOI/AAAAAAAAAjU/SaP08rKponcLyVnsCQwb8p49x54DhmlvwCPcBGAYYCw/s1600/default-user-image.png"/>
-						<?php endif ?>
+						<img src="https://2.bp.blogspot.com/-SxG8ABgNBwo/W0H9c9EMtOI/AAAAAAAAAjU/SaP08rKponcLyVnsCQwb8p49x54DhmlvwCPcBGAYYCw/s1600/default-user-image.png"/>
 					</a>
 					<hgroup class="introduce">
-						<?php if (!empty($_SESSION['masuk'])): ?>
-							<h5 class="nickname"><?= $_SESSION['name'] ?></h5>
-							<a href="https://fb.com/<?= $_SESSION['id'] ?>" class="mail"><?= $_SESSION['id'] ?></a>
-						<?php else: ?>
-							<h5 class="nickname"><?= $settings['title']; ?></h5>
-							<a target="_blank" href="javascript:;" class="mail"><?= $settings['desc'] ?></a>
-						<?php endif ?>
+						<h5 class="nickname"><?= $settings['title']; ?></h5>
+						<a target="_blank" href="javascript:;" class="mail"><?= $settings['desc'] ?></a>
 					</hgroup>
 				</div>
 			</div>
@@ -81,7 +72,7 @@ include "config/settings.php";
 					</a>
 					<!-- blogger#search -->					
 				</div>
-				<a data-toggle="modal" data-target="#modalguide" href="javascript:;" class="header-icon waves-effect waves-circle waves-light"><i class="icon icon-lg icon-question-circle"></i></a>
+				<a data-toggle="modal" data-target="#modalauthor" href="javascript:;" class="header-icon waves-effect waves-circle waves-light"><i class="icon icon-lg icon-question-circle"></i></a>
 				<a href="javascript:;" class="hidden header-icon waves-effect waves-circle waves-light" id="menuShare"></a>
 			</div>
 		</header>
@@ -108,13 +99,10 @@ include "config/settings.php";
 					</h1>
 					<div class="post-meta">
 						<span id='busuanzi_container_page_pv' style='display:none'>
-						<i class='icon icon-eye icon-pr'></i><span id='busuanzi_value_page_pv'></span>
+							<i class='icon icon-eye icon-pr'></i><span id='busuanzi_value_page_pv'></span>
 						</span>
 					</div>
 					<div class="post-content">
-						<?php if (isset($_SESSION['count_post'])): ?>
-							<div class="alert alert-info"><?= $_SESSION['count_post'] ?></div>
-						<?php endif ?>
 						<?php include "template/nav.process.php" ?>
 					</div>
 				</div>
