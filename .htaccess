@@ -1,1 +1,5 @@
 Options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^nik?$ ./module/fakektp/nik.php

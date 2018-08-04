@@ -6,8 +6,8 @@ switch (@$_GET['module']) {
 	$title = "SGB Quote";
 	break;
 
-	case 'sgbquotelist':
-	$title = "SGB Quote List";
+	case 'fakektp':
+	$title = "Fake KTP";
 	break;
 
 	default:
