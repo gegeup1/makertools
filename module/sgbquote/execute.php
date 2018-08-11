@@ -15,7 +15,7 @@ if(isset($_POST['execute'])) {
 	if (!filter_var($backgrond, FILTER_VALIDATE_URL) === false) {
 		$bg = $backgrond;
 	}else {		
-		$bg = get_redirect_target('https://source.unsplash.com/640x640/?'.$backgrond);
+		$bg = get_redirect_target('https://source.unsplash.com/640x640/?'.urlencode($backgrond));
 	}
 
 	$image = new PHPImage();
