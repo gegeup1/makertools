@@ -9,11 +9,12 @@ include "config/settings.php";
 	<?php include "template/meta.php" ?>
 	
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-material-indigo@1.7.2/css/style.css"/>
 
 	<!-- dataTables -->
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
 
 	<link rel="stylesheet" href="assets/css/main.css"/>
@@ -21,7 +22,9 @@ include "config/settings.php";
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 	<script>window.lazyScripts=[]</script>
 
-	<!-- custom head -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js'></script>
+
 </head>
 <body itemscope='itemscope' itemtype='http://schema.org/WebPage'>
 	<meta itemprop="accessibilityControl" content="fullKeyboardControl"/>

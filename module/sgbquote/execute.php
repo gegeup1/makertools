@@ -6,9 +6,9 @@ if(isset($_POST['execute'])) {
 
 	$folder = "files/sgbquote/";
 	$overlay = $folder."overlay.png";
-	$font = $folder."Ubuntu-Medium.ttf";
+	$font = "files/_font/"."Ubuntu-Medium.ttf";
 	$filename = $folder.md5(rand(000,999)).".png";
-	$quote = @$_POST['quote'] ? $_POST['quote'] : 'ISI DULU KONTOL';
+	$quote = @$_POST['quote'] ? $_POST['quote'] : 'YOUR QUOTE';
 	$copyright = @$_POST['copyright'] ? $_POST['copyright'] : 'SGB TEAM';
 	$backgrond = @$_POST['background'];
 
@@ -48,8 +48,8 @@ if(isset($_POST['execute'])) {
 	$image->save($filename);
 
 
-	$imagebase64 = base64_encode(file_get_contents($filename));
-	echo "<a href='data:image/png;base64,".$imagebase64."' target='_blank' download='$filename'><img src='data:image/png;base64,".$imagebase64."'/></a>";
+	$imagebase64 = "data:image/png;base64,".base64_encode(file_get_contents($filename));
+	echo "<a href='".$imagebase64."' target='_blank' download='$filename'><img src='".$imagebase64."'/></a>";
 	unlink($filename);
 }
 

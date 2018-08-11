@@ -2,6 +2,10 @@
 // Title Declaration
 switch (@$_GET['module']) {
 
+	case 'quotemaker':
+	$title = "Quote Maker";
+	break;
+
 	case 'sgbquote':
 	$title = "SGB Quote";
 	break;
