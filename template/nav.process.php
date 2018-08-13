@@ -9,9 +9,10 @@ switch (@$_GET['module']) {
 	include "module/sgbquote/index.php";
 	break;
 
-	case 'fakektp':
-	include "module/fakektp/index.php";
-	break;
+	// remove
+	// case 'fakektp':
+	// include "module/fakektp/index.php";
+	// break;
 	
 	default:
 	include "module/dashboard/index.php";

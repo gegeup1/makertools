@@ -16,9 +16,11 @@
 		SGB Quote
 	</a>
 </li> 
+<!-- 
+remove ~
 <li class="waves-block waves-effect">
 	<a href="?module=fakektp">
 		<i class="icon icon-lg icon-th-list"></i>
 		Fake KTP
 	</a>
-</li> 
+</li>  -->

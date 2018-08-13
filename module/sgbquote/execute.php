@@ -6,7 +6,8 @@ if(isset($_POST['execute'])) {
 
 	$folder = "files/sgbquote/";
 	$overlay = $folder."overlay.png";
-	$font = "files/_font/"."Ubuntu-Medium.ttf";
+	$font_quote = "files/_font/"."Ubuntu-Medium.ttf";
+	$font_copyright = "files/_font/"."Ubuntu-Medium.ttf";
 	$filename = $folder.md5(rand(000,999)).".png";
 	$quote = @$_POST['quote'] ? $_POST['quote'] : 'YOUR QUOTE';
 	$copyright = @$_POST['copyright'] ? $_POST['copyright'] : 'SGB TEAM';
@@ -23,7 +24,7 @@ if(isset($_POST['execute'])) {
 	$image->setDimensionsFromImage($overlay);
 	$image->draw($bg);
 	$image->draw($overlay, '50%', '75%');
-	$image->setFont($font);
+	$image->setFont($font_quote);
 	$image->setTextColor(array(255, 255, 255));
 	$image->setAlignVertical('center');
 	$image->setAlignHorizontal('center');
@@ -36,6 +37,7 @@ if(isset($_POST['execute'])) {
 		'debug' => false
 		));
 
+	$image->setFont($font_copyright);
 	$image->setTextColor(array(230, 209, 65));	
 	$image->text('© '.$copyright, array(
 		'fontSize' => 15, 
