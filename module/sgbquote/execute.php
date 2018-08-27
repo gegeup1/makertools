@@ -6,8 +6,8 @@ if(isset($_POST['execute'])) {
 
 	$folder = "files/sgbquote/";
 	$overlay = $folder."overlay.png";
-	$font_quote = "files/_font/"."Ubuntu-Medium.ttf";
-	$font_copyright = "files/_font/"."Ubuntu-Medium.ttf";
+	$font_quote = realpath("files/_font/"."Ubuntu-Medium.ttf");
+	$font_copyright = realpath("files/_font/"."Ubuntu-Medium.ttf");
 	$filename = $folder.md5(rand(000,999)).".png";
 	$quote = @$_POST['quote'] ? $_POST['quote'] : 'YOUR QUOTE';
 	$copyright = @$_POST['copyright'] ? $_POST['copyright'] : 'SGB TEAM';

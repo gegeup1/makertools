@@ -155,7 +155,7 @@
 				$folder = "files/quotemaker/";
 				$folderoverlay = $folder."overlay/";
 				$overlay =  @$_POST['overlay'] ?  $folderoverlay.$_POST['overlay'] : $folderoverlay."overlay1.png";
-				$font = "files/_font/".@$_POST['font'];
+				$font = realpath("files/_font/".@$_POST['font']);
 				$filename = $folder.md5(rand(000,999)).".png";
 				$color = @$_POST['color'] ? sscanf($_POST['color'], "rgb(%d, %d, %d)") : array('255, 255, 255');
 				$quote = @$_POST['quote'] ? $_POST['quote'] : 'Empty Text';
